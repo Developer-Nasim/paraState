@@ -429,14 +429,14 @@ a{
 .trying-wrp.allWrps {
   max-width: 400px;
 }
-.trying-wrp.allWrps li {
+.trying-wrp li .tr-wrps {
   font-size: 16px;
   line-height: 28px;
 }
-.trying-wrp.allWrps li i {
+.trying-wrp li .tr-wrps i {
   color: #00000073;
 }
-.trying-wrp.allWrps li a {
+.trying-wrp li .tr-wrps a {
   text-decoration: underline;
   color: #4189CC;
 }
