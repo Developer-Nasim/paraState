@@ -132,51 +132,6 @@
         <script src="assets/js/vendor/jquery-3.4.1.min.js"></script>
         <script src="assets/js/popper.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script> 
-        <script>
-            window.addEventListener('load', () => {
-                    
-                const tbd  = document.querySelector('.vali-table table tbody');
-                const data = [];
-                const Fethingdatas = () => {
-                    fetch(`https://status.parastate.io/static/validators.json`)
-                    .then(res => res.json())
-                    .then(res => {
-                        res.forEach(element => {
-                            data.push(element) 
-                        });
-                        data.forEach(elm => {
-
-                            let Ctr = document.createElement('TR'); 
-                            Ctr.innerHTML = "<td><b>"+elm.order+"</b></td> <td>"+elm.validator+"</td> <td>"+elm.reward+"</td>"
-                            
-                            tbd.appendChild(Ctr) 
-                        });
-                    })
-                    .catch(err => console.log(err))
-                }
-                Fethingdatas() 
-
-                function Filtering() {
-                    let input = document.querySelector('#search');
-                    input.addEventListener('keyup', (e) => {
-                        const inpvl = e.target.value;
-                        tbd.innerHTML = "";
-                        let fitr = data.filter(dts => { 
-                            const needMatch = new RegExp(inpvl,'ig')
-                            const matchnow  = dts.validator.match(needMatch)
-                            if (matchnow) {
-                                
-                                let Ctr = document.createElement('TR'); 
-                                Ctr.innerHTML = "<td><b>"+dts.order+"</b></td> <td>"+dts.validator+"</td> <td>"+dts.reward+"</td>"
-                                
-                                tbd.appendChild(Ctr) 
-                            }
-                        }) 
-                    })
-                }
-                Filtering()
-            })
-
-        </script>
+        
     </body>
 </html>
